@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app='videoSearch'>
+<head>
+	<title>Search Videos</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="nav navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class='text-center'>Single Page App - JS Exercise</h1>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" ng-controller="MainController">
+			<div class="col-md-12">
+				<h2>Search for a Movie</h2>
+				<form ng-submit="search(query)">
+					<input name="query" ng-model="query" placeholder="Search" autofocus/> <input name="submit" class="btn btn-info" type="submit" value="Search" />
+				</form>
+			</div>
+		</div>
+		<div class="row">
+		
+			<div class="col-md-12">
+				<h2>Movie List</h2>
+				<hr class="" />
+			</div>			
+			<div class="col-md-12" ng-repeat="movie in movies">
+				<div class="row">
+					<div class="col-md-12 well">
+						<p><span class="lead">Title: {{movie.Title | uppercase }}</span> | <em>Year: {{movie.Year}}</em></p>
+						<p>Movie Type: {{movie.Type}}</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="footer navbar-inverse">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h6>Copyright</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
