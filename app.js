@@ -25,6 +25,8 @@ app.controller('MainController', function ($scope, $http){
 		$http.get(query).success(function(data){
 		 	console.log(data);
 		 	$scope.movies.push(data);
+		}).error(function(data){
+			$scope.error = "Could not connect to Open IMDB database.  Possibly check your internet connection."
 		});
 	};
 
