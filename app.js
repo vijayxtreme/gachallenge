@@ -20,7 +20,7 @@ app.controller('MainController', function ($scope, $http){
 
 	//var context = this;
 
-	 $scope.search = function(query){
+	$scope.search = function(query){
 		$http.get('http://www.omdbapi.com/?s='+query).success(function(data){
 		 	console.log(data["Search"]);
 		 	$scope.movies = data["Search"];
