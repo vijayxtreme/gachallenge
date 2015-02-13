@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class='text-center'>Search for Movies</h1>
+					<h1 class='text-center'>Search for a Movie</h1>
 				</div>
 			</div>
 			
@@ -32,13 +32,24 @@
 				<h2>Movie List</h2>
 				<hr class="" />
 			</div>			
-			<div class="col-md-12">
+			<div class="col-md-12 frame">
 				<div class="row">
-
-					<div class="col-md-12 well" ng-repeat="movie in movies | limitTo: 5 | filter: query ">
+					<div class="col-md-12 well" ng-repeat="movie in movies | filter: query ">
 						<!-- {{movies.length}} -->
-						<p><span class="lead">Title: <a href="{{'http://www.imdb.com/title/' + movie.imdbID }}" target="_blank">{{movie.Title}}</a></span> | <em>Year: {{movie.Year}}</em></p>
-						<p>Movie Type: {{movie.Type}}</p>
+						<p><span class="lead"><a href="{{'http://www.imdb.com/title/' + movie.imdbID }}" target="_blank">{{movie.Title}}</a></span> | <em>Year: {{movie.Year}}</em></p>
+						<div class="col-md-4">
+							<a href="{{'http://www.imdb.com/title/' + movie.imdbID }}" target="_blank"><img ng-src='{{movie.Poster}}' /></a>
+						</div>
+						<div class="col-md-6">
+							<p class="lead">{{movie.Plot}}</p>
+							<p>Actors: {{movie.Actors}}</p>
+							<p>Genre: {{movie.Genre}}</p>
+							<p>Rotten Tomatoes Score: {{movie.tomatoRating}}</p>
+							<p>Director: {{movie.Director}}</p>
+							<p>Writer(s): {{movie.Writer}}</p>
+							<p>Runtime: {{movie.Runtime}}</p>
+							<p>Website: <a href="{{movie.Website}}" target="_blank">{{movie.Website}}</a></p>
+						</div>
 					</div>
 				</div>
 			</div>

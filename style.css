@@ -7,6 +7,10 @@ body {
 	padding-top:80px;
 	margin-bottom:60px;
 }
+.frame {
+	max-height:650px;
+	overflow: auto;
+}
 
 .nav h1 {
 	color:#fff;

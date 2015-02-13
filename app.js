@@ -18,12 +18,13 @@ app.controller('MainController', function ($scope, $http){
 
 	// };
 
-	//var context = this;
-
+//http://www.omdbapi.com/?plot&s
 	$scope.search = function(query){
-		$http.get('http://www.omdbapi.com/?s='+query).success(function(data){
-		 	console.log(data["Search"]);
-		 	$scope.movies = data["Search"];
+
+		var query = 'http://www.omdbapi.com/?t='+query+'&y=&plot=short&tomatoes=true';
+		$http.get(query).success(function(data){
+		 	console.log(data);
+		 	$scope.movies.push(data);
 		});
 	};
 
