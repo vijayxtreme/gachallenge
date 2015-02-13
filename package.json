@@ -1,0 +1,24 @@
+{
+  "name": "gachallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vijayxtreme/gachallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijayxtreme/gachallenge/issues"
+  },
+  "homepage": "https://github.com/vijayxtreme/gachallenge",
+  "dependencies": {
+    "angular": "^1.3.13",
+    "bootstrap": "^3.3.2",
+    "jquery": "^2.1.3"
+  }
+}
