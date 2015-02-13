@@ -1,9 +1,11 @@
 
 var app = angular.module('videoSearch', []);
 
-app.controller('MainController', ['$scope', '$http', function ($scope, $http){
+app.controller('MainController', function ($scope, $http){
 	
-	$scope.movies =[];
+	$scope.movies = [];
+	//console.log($scope.movies);
+		
 	// this.map = function(data){
 
 	// 	var mapArr = [];
@@ -16,9 +18,9 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http){
 
 	// };
 
-	var context = this;
+	//var context = this;
 
-	$scope.search = function(query){
+	 $scope.search = function(query){
 		$http.get('http://www.omdbapi.com/?s='+query).success(function(data){
 		 	console.log(data["Search"]);
 		 	$scope.movies = data["Search"];
@@ -28,6 +30,6 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http){
 	 
 	
 
-}]);
+});
 
 
